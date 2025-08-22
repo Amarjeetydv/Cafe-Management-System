@@ -1,0 +1,9 @@
+<mat-nav-list appAccordion class="sidebar-container">
+    <mat-list-item appAccordionLink *ngFor="let menuitem of filteredMenuItems" routerLinkActive="selected" group="{{menuitem.state}}">
+        <a appAccordionToggle [routerLink]="['/cafe',menuitem.state]">
+            <mat-icon>{{menuitem.icon}}</mat-icon>
+            <span>{{menuitem.name}}</span>
+            <span fxFlex></span>
+        </a>
+    </mat-list-item>
+</mat-nav-list>

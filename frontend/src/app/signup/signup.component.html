@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row">
+      <span class="title-center">Signup</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <mat-dialog-content class="mat-typography">
+    <form [formGroup]="signupForm" (ngSubmit)="handleSubmit()">
+      <div fxLayout="column">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="signupForm.get('name')?.errors?.['required']">This field is mandatory</mat-error>
+          <mat-error *ngIf="signupForm.get('name')?.errors?.['pattern']">Invalid name format</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="signupForm.get('email')?.errors?.['required']">This field is mandatory</mat-error>
+          <mat-error *ngIf="signupForm.get('email')?.errors?.['pattern']">Invalid email format</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Contact Number</mat-label>
+          <input matInput formControlName="contactNumber">
+          <mat-error *ngIf="signupForm.get('contactNumber')?.errors?.['required']">This field is mandatory</mat-error>
+          <mat-error *ngIf="signupForm.get('contactNumber')?.errors?.['pattern']">Invalid contact number format</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error *ngIf="signupForm.get('password')?.errors?.['required']">This field is mandatory</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-dialog-actions align="center">
+        <button mat-raised-button color="primary" type="submit" [disabled]="signupForm.invalid">Signup</button>
+        <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+      </mat-dialog-actions>
+    </form>
+  </mat-dialog-content>
+  

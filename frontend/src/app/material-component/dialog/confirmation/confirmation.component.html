@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row">
+    <span class="title-center">Confirm Action</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-dialog-content class="mat-typography confirmation-dialog">
+  <div class="confirmation-icon">
+    <mat-icon>help_outline</mat-icon>
+  </div>
+  <div class="confirmation-message">
+    Are you sure you want to {{details.message}}?
+  </div>
+  <div class="confirmation-details" *ngIf="details.details">
+    {{details.details}}
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button color="primary" (click)="handleChangeAction()">
+    Yes, Continue
+  </button>
+  <button mat-raised-button mat-dialog-close class="close-btn">
+    Cancel
+  </button>
+</mat-dialog-actions>

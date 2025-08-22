@@ -1,0 +1,458 @@
+/*
+* Global Dialog Styles for Cafe Management System
+* Improves the appearance and layout of all Material Dialog components
+*/
+
+// Global dialog container improvements
+.mat-dialog-container {
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  max-width: 90vw !important;
+  max-height: 90vh !important;
+}
+
+// Dialog size configurations
+.dialog-small {
+  .mat-dialog-container {
+    max-width: 400px !important;
+  }
+}
+
+.dialog-medium {
+  .mat-dialog-container {
+    max-width: 600px !important;
+  }
+}
+
+.dialog-large {
+  .mat-dialog-container {
+    max-width: 800px !important;
+  }
+}
+
+.dialog-extra-large {
+  .mat-dialog-container {
+    max-width: 1000px !important;
+  }
+}
+
+// Dialog content improvements
+.mat-dialog-content {
+  padding: 24px !important;
+  margin: 0 !important;
+  max-height: 70vh !important;
+  overflow-y: auto !important;
+  
+  // Custom scrollbar for better appearance
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
+
+// Dialog actions improvements
+.mat-dialog-actions {
+  padding: 16px 24px 24px 24px !important;
+  margin: 0 !important;
+  border-top: 1px solid #e0e0e0;
+  background: #fafafa;
+  
+  button {
+    margin: 0 8px !important;
+    min-width: 100px !important;
+    height: 40px !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    
+    &:first-child {
+      margin-left: 0 !important;
+    }
+    
+    &:last-child {
+      margin-right: 0 !important;
+    }
+    
+    &:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+  }
+}
+
+// Toolbar improvements for dialog headers
+.mat-toolbar {
+  margin: 0 !important;
+  padding: 16px 24px !important;
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%) !important;
+  color: white !important;
+  border-radius: 12px 12px 0 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  
+  .mat-toolbar-row {
+    height: auto !important;
+    min-height: 48px !important;
+  }
+  
+  .title-center {
+    flex: 1 1 auto !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+  }
+}
+
+// Form field improvements
+mat-form-field {
+  width: 100% !important;
+  margin-bottom: 16px !important;
+  
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+  
+  .mat-form-field-outline {
+    border-radius: 8px !important;
+  }
+  
+  .mat-form-field-outline-thick {
+    border-width: 2px !important;
+  }
+  
+  .mat-input-element {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+  }
+  
+  .mat-form-field-label {
+    font-weight: 500 !important;
+    color: #666 !important;
+  }
+  
+  &.mat-focused {
+    .mat-form-field-label {
+      color: #1976d2 !important;
+    }
+    
+    .mat-form-field-outline-thick {
+      color: #1976d2 !important;
+    }
+  }
+  
+  // Textarea specific styling
+  textarea.mat-input-element {
+    min-height: 80px !important;
+    resize: vertical !important;
+  }
+  
+  // Select field styling
+  .mat-select-value {
+    color: #424242 !important;
+  }
+  
+  .mat-select-arrow {
+    color: #666 !important;
+  }
+}
+
+// Button improvements
+.mat-raised-button {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 8px 24px !important;
+  min-height: 40px !important;
+  transition: all 0.3s ease !important;
+  
+  &.mat-primary {
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%) !important;
+    color: white !important;
+    
+    &:hover:not(:disabled) {
+      background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 20px rgba(25, 118, 210, 0.3) !important;
+    }
+    
+    &:disabled {
+      background: #bdbdbd !important;
+      color: #757575 !important;
+    }
+  }
+  
+  &.close-btn, &.mat-dialog-close {
+    background: #f5f5f5 !important;
+    color: #666 !important;
+    border: 1px solid #e0e0e0 !important;
+    
+    &:hover {
+      background: #eeeeee !important;
+      color: #424242 !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+}
+
+// Error message improvements
+.mat-error {
+  color: #d32f2f !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+  font-weight: 500 !important;
+}
+
+// Hint improvements
+.mat-hint {
+  color: #666 !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+}
+
+// Form layout improvements
+form {
+  .form-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    margin-bottom: 16px !important;
+    
+    mat-form-field {
+      flex: 1 !important;
+      min-width: 200px !important;
+      margin-bottom: 0 !important;
+    }
+  }
+  
+  .form-column {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+  
+  // Better spacing for single column forms
+  &.form-column {
+    mat-form-field {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+// Responsive improvements
+@media (max-width: 600px) {
+  .mat-dialog-container {
+    margin: 16px !important;
+    max-width: calc(100vw - 32px) !important;
+  }
+  
+  .mat-dialog-content {
+    padding: 16px !important;
+  }
+  
+  .mat-dialog-actions {
+    padding: 12px 16px 16px 16px !important;
+    flex-direction: column !important;
+    
+    button {
+      width: 100% !important;
+      margin: 8px 0 !important;
+    }
+  }
+  
+  .mat-toolbar {
+    padding: 12px 16px !important;
+    
+    .title-center {
+      font-size: 16px !important;
+    }
+  }
+}
+
+// Animation improvements
+.mat-dialog-container {
+  animation: dialogSlideIn 0.3s ease-out !important;
+}
+
+@keyframes dialogSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Special styling for confirmation dialogs
+.confirmation-dialog {
+  .mat-dialog-content {
+    text-align: center !important;
+    padding: 32px 24px !important;
+    
+    .confirmation-icon {
+      font-size: 48px !important;
+      color: #1976d2 !important;
+      margin-bottom: 16px !important;
+    }
+    
+    .confirmation-message {
+      font-size: 16px !important;
+      color: #424242 !important;
+      line-height: 1.5 !important;
+      margin-bottom: 8px !important;
+    }
+    
+    .confirmation-details {
+      font-size: 14px !important;
+      color: #666 !important;
+    }
+  }
+}
+
+// Special styling for view dialogs
+.view-dialog {
+  .mat-dialog-content {
+    padding: 0 !important;
+    
+    .view-header {
+      background: #f5f5f5;
+      padding: 16px 24px;
+      border-bottom: 1px solid #e0e0e0;
+      
+      h3 {
+        margin: 0;
+        color: #424242;
+        font-weight: 600;
+      }
+    }
+    
+    .view-content {
+      padding: 24px;
+    }
+  }
+}
+
+// Customer info styling
+.customer-info {
+  margin-bottom: 24px;
+  
+  .info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 16px;
+    
+    .info-item {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      border-left: 4px solid #1976d2;
+      
+      strong {
+        color: #1976d2;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+// Products section styling
+.products-section {
+  h4 {
+    color: #424242;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  .products-table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    .mat-header-cell {
+      background: #f5f5f5;
+      color: #424242;
+      font-weight: 600;
+      padding: 16px 12px;
+    }
+    
+    .mat-cell {
+      padding: 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .mat-row:hover {
+      background: #f8f9fa;
+    }
+  }
+}
+
+// Close button styling
+.mat-dialog-close {
+  color: white !important;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+// Error hint styling
+.error-hint {
+  color: #d32f2f !important;
+  font-size: 12px !important;
+  margin-top: 4px !important;
+}
+
+// Spacer utility
+.spacer {
+  flex: 1 1 auto;
+}
+
+// Responsive table improvements
+.responsive_table {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+    
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
