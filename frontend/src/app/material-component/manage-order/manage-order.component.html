@@ -30,9 +30,10 @@
                     <mat-label>Payment Method</mat-label>
                     <mat-select matInput formControlName="paymentMethod" required>
                         <mat-option value="Cash">Cash</mat-option>
-                        <mat-option value="Credit Card">Credit Card</mat-option>
-                        <mat-option value="Debit Card">Debit Card</mat-option>
-                        </mat-select>
+                        <mat-option value="Online Payment (Razorpay)">Online Payment (Razorpay)</mat-option>
+                        <mat-option value="Credit/Debit Card">Credit/Debit Card</mat-option>
+                        <mat-option value="UPI/QR Code">UPI/QR Code</mat-option>
+                    </mat-select>
                     <mat-error *ngIf="manageOrderForm.get('paymentMethod')?.errors?.['required']">This field is mandatory</mat-error>
                    <mat-error *ngIf="manageOrderForm.get('paymentMethod')?.errors?.['pattern']">Invalid name format</mat-error>
                 </mat-form-field>
@@ -47,12 +48,19 @@
 <form [formGroup]="manageOrderForm">
     <div fxFlex fxLayout="column" >
         <div fxLayout="row wrap">
-            <mat-form-field appearance="fill" fxFlex>
-                <mat-label>Category</mat-label>
-                <mat-select formControlName="category" (selectionChange)="getProductsByCategory($event.value)">
-                    <mat-option *ngFor="let category of category" [value]="category">{{category.name}}</mat-option>
-                </mat-select>
-            </mat-form-field>
+            <div fxLayout="column" fxFlex>
+                <label style="font-weight:600; margin-bottom:6px;">Quick Select Categories</label>
+                <div fxLayout="row" fxLayoutGap="8px" style="margin-bottom:8px;">
+                    <button mat-stroked-button *ngFor="let cat of popularCategories" (click)="selectCategory(cat)">{{cat.name}}</button>
+                </div>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="category" (selectionChange)="getProductsByCategory($event.value)">
+                        <mat-option *ngFor="let category of category" [value]="category">{{category.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
 
             <mat-form-field appearance="fill" fxFlex>
                 <mat-label>Product</mat-label>
