@@ -1,0 +1,7 @@
+# Environment files - Contains secrets
+.env
+
+# Dependencies
+/node_modules/
+/BACKEND-CAFE-NODEJS/node_modules/
+/frontend/node_modules/
