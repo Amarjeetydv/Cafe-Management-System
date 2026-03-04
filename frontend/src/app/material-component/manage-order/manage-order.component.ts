@@ -14,8 +14,13 @@ import { saveAs } from 'file-saver';
   styleUrls: ['./manage-order.component.scss']
 })
 export class ManageOrderComponent implements OnInit {
+  selectCategory(cat: any) {
+    this.manageOrderForm.controls['category'].setValue(cat);
+    this.getProductsByCategory(cat);
+  }
 
   displayedColumn: string[] = ['name', 'category', 'price', 'quantity', 'total', 'edit'];
+  popularCategories: any[] = [];
   dataSource: any = [];
   manageOrderForm: any = FormGroup;
   category: any = [];
